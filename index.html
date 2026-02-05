@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convertisseur d'Unités</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main class="container">
+        <header class="header">
+            <h1 class="title">Convertisseur d'Unités</h1>
+            <p class="subtitle">Convertissez facilement entre différentes unités de mesure</p>
+        </header>
+
+        <section class="converter-card">
+            <form id="converterForm" class="converter-form">
+                <div class="form-group">
+                    <label for="conversionType" class="form-label">Type de conversion</label>
+                    <select id="conversionType" name="conversionType" class="form-select" required>
+                        <option value="">Sélectionnez un type</option>
+                        <option value="length">Longueur</option>
+                        <option value="weight">Poids</option>
+                        <option value="temperature">Température</option>
+                        <option value="volume">Volume</option>
+                        <option value="area">Surface</option>
+                        <option value="speed">Vitesse</option>
+                    </select>
+                </div>
+
+                <div id="unitsContainer" class="units-container">
+                </div>
+
+                <div class="form-group">
+                    <label for="inputValue" class="form-label">Valeur à convertir</label>
+                    <input 
+                        type="number" 
+                        id="inputValue" 
+                        name="inputValue" 
+                        class="form-input" 
+                        placeholder="Entrez une valeur"
+                        step="any"
+                        required
+                    >
+                    <span id="errorMessage" class="error-message"></span>
+                </div>
+
+                <button type="submit" class="convert-btn" disabled>
+                    Convertir
+                </button>
+            </form>
+
+            <div id="resultContainer" class="result-container hidden">
+                <div class="result-header">
+                    <h3 class="result-title">Résultat</h3>
+                </div>
+                <div id="resultValue" class="result-value">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
